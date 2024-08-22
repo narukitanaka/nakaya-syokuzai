@@ -1,0 +1,123 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+footer
+*************************************************/
+footer {
+  padding: 4.7rem 0 1.8rem;
+  border-top-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+  background-color: #fff;
+  margin-top: -6rem;
+  .inner {
+    justify-content: space-between;
+    margin-bottom: 17.8rem;
+    @include c.mq() {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+  }
+  .column01 {
+    .logo {
+      width: 12rem;
+      margin-bottom: 1.6rem;
+      @include c.mq() {
+        margin: 0 auto 4rem;
+      }
+    }
+    p {
+      font-size: 1.4rem;
+      margin-bottom: .5rem;
+    }
+  }
+  .column02 {
+    display: flex;
+    gap: 6rem;
+    @include c.mq() {
+      width: 85%;
+      margin: 0 auto 2rem;
+    }
+    ul {
+      li {
+        margin-bottom: 1.4rem;
+        a {
+          transition: all .3s;
+          @include c.mq() {
+            font-size: 1.3rem;
+          }
+          &:hover {
+            color: v.$sub-color01;
+          }
+        }
+      }
+    }
+    .nav03 {
+      ul {
+        li {
+          a {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+  .column03 {
+    @include c.mq() {
+      text-align: center;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #000;
+      margin-bottom: 1.6rem;
+    }
+    .btn01 {
+      display: block;
+      margin-bottom: 1.6rem;
+      @include c.mq() {
+        font-size: 2rem;
+        max-width: 24rem;
+        margin: 0 auto 1.6rem;
+      }
+    }
+    .tel {
+      font-size: 2.6rem;
+      font-weight: 700;
+      transition: all .3s;
+      @include c.mq() {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+      path {
+        transition: all .3s;
+      }
+      &:hover {
+        color: v.$sub-color01;
+        path {
+          fill: v.$sub-color01;
+        }
+      }
+    }
+    p {
+      font-size: 1.1rem;
+      text-align: left;
+      padding-left: v.pxtovw_sp(70);
+    }
+  }
+  .column04 {
+    ul {
+      @include c.mq() {
+        display: flex;
+        justify-content: center;
+        gap: 3.4rem;
+        li {
+          a {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+  p {
+    &:has(small) {
+      text-align: center;
+    }
+  }
+}

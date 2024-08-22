@@ -1,0 +1,1332 @@
+@use "variable"as v;
+@use "common"as c;
+@use "sass:math";
+/*************************************************
+　下層共通
+*************************************************/
+.p-under_mv {
+  position: relative;
+  margin-bottom: 20rem;
+  @include c.mq() {
+    margin-bottom: 4rem;
+  }
+  .img-box {
+    width: 100%;
+    width: 100vw;
+    aspect-ratio: 1/.31;
+    overflow: hidden;
+    border-bottom-left-radius: 6rem;
+    @include c.mq() {
+      aspect-ratio: 1/.67;
+      border-bottom-left-radius: 4rem;
+      border-bottom-right-radius: 4rem;
+    }
+    img {
+      object-position: left;
+      @include c.mq() {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  h1 {
+    position: absolute;
+    top: v.pxtovw(186);
+    left: v.pxtovw(101);
+    font-size: 4.8rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: 6px;
+    text-shadow: v.$shadow01;
+    z-index: 1;
+    @include c.mq() {
+      top: v.pxtovw_sp(107);
+      left: v.pxtovw_sp(20);
+      font-size: 3.2rem;
+      letter-spacing: 2px;
+    }
+  }
+  p {
+    position: absolute;
+    top: v.pxtovw(260);
+    left: v.pxtovw(101);
+    width: 44rem;
+    font-family: v.$font-eb;
+    font-weight: 600;
+    color: #fff;
+    line-height: 2;
+    letter-spacing: 2px;
+    z-index: 1;
+    text-shadow: v.$shadow01;
+    @include c.mq() {
+      top: v.pxtovw_sp(153);
+      left: v.pxtovw_sp(20);
+    }
+  }
+  &.p_archive-product {
+    h1 {
+      @include c.mq() {
+        top: v.pxtovw_sp(90); 
+        line-height: 1.3;
+      }
+    }
+    p {
+      top: v.pxtovw_sp(183);
+    }
+  }
+  &.p_term {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }  
+}
+
+/*************************************************
+　なかや食材について
+*************************************************/
+.p-about_wrap01 {
+  margin-bottom: 14.1rem;
+  @include c.mq() {
+    margin-bottom: 6.8rem;
+  }
+  .inner {
+    @include c.mq() {
+      flex-direction: column;
+    }
+  }
+  .left,.right {
+    flex-basis: 50%;
+  }
+  .left {
+    .img-box {
+      max-width: 59.8rem;
+      @include c.mq() {
+        aspect-ratio: 1/.69;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .right {
+    padding: 6.1rem 0 0 4.4rem;
+    @include c.mq() {
+      padding: 0;
+    }
+    h2 {
+      font-size: 3.6rem;
+      line-height: 1.5;
+      letter-spacing: 4px;
+      margin-bottom: 2rem;
+      @include c.mq() {
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+      }
+    }
+    p {
+      @include c.mq() {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.p-about_wrap02 {
+  position: relative;
+  background: url(images/\ top-service_bg.jpg) no-repeat center/cover;
+  border-radius: 6rem;
+  padding: 7rem 0 6.2rem;
+  @include c.mq() {
+    border-radius: 4rem;
+    padding: 5rem 0 2.6rem;
+  }
+  h2 {
+    font-size: 3.2rem;
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+    margin-bottom: 7rem;
+    @include c.mq() {
+      font-size: 2.8rem;
+      flex-direction: column;
+      margin-bottom: 2.8rem;
+    }
+    span {
+      font-family: v.$font-eb;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+  .block {
+    gap: 5.5rem;
+    padding: 2.5rem 3rem;
+    background-color: #fff;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+    @include c.mq() {
+      flex-direction: column;
+      padding: 1.3rem;
+      padding-bottom: 2rem;
+      gap: 2rem;
+    }
+    .left {
+      .img-box {
+        width: 49.1rem;
+        border-radius: 2rem;
+        overflow: hidden;
+        @include c.mq() {
+          width: 100%;
+          aspect-ratio: 1/.73;
+        }
+      }
+    }
+    .right {
+      padding-top: 1.6rem;
+      @include c.mq() {
+        padding-top: 0;
+      }
+      h3 {
+        display: flex;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 3.6rem;
+        @include c.mq() {
+          font-size: 1.8rem;
+          margin-bottom: 1.8rem;
+        }
+        span {
+          display: block;
+          border-right: 1px solid v.$main-txt;
+          padding-right: 1.8rem;
+          margin-right: 1.8rem;
+          @include c.mq() {
+            padding-right: 1.4rem;
+            margin-right: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.img-sec {
+  margin-top: v.pxtovw(-75);
+  @include c.mq() {
+    margin-top: v.pxtovw_sp(-51);
+  }
+  .img-box {
+    @include c.mq() {
+      aspect-ratio: 1/.88;
+    }
+  }
+}
+
+.p-about_wrap03 {
+  position: relative;
+  padding: 5.6rem 0 5.8rem;
+  border-top-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+  background-color: #fff;
+  margin-top: v.pxtovw(-125);
+  @include c.mq() {
+    margin-top: v.pxtovw_sp(-51);
+  }
+  .inner {
+    @include c.mq() {
+      padding: 0 v.pxtovw_sp(13);
+    }
+  }
+  h2 {
+    font-family: v.$font-eb;
+    font-size: 4rem;
+    display: flex;
+    gap: 3.1rem;
+    align-items: center;
+    margin-bottom: 3.8rem;
+    @include c.mq() {
+      flex-direction: column;
+      align-items: baseline;
+      gap: .6rem;
+    }
+    span {
+      font-family: v.$font-eb;
+      font-weight: 500;
+      font-size: 1.6rem;
+      padding-top: 1rem;
+    }
+  }
+  ul {
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: .5rem;
+    @include c.mq() {
+      row-gap: 1.5rem;
+      row-gap: 1.5rem;
+    }
+    li {
+      width: calc((100% / 3) - (2rem / 3));
+      @include c.mq() {
+        width: calc((100% / 2) - (1.5rem / 2));
+      }
+    }
+  }
+}
+
+.p-about_wrap04 {
+  padding: 2.8rem 0 6.9rem;
+  h2 {
+    font-family: v.$font-eb;
+    font-size: 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3.8rem;
+    @include c.mq() {
+      font-size: 3.2rem;
+      flex-direction: column;
+      align-items: baseline;
+      gap: .6rem;
+      margin-bottom: 2rem;
+    }
+    span {
+      font-family: v.$font-eb;
+      font-weight: 500;
+      font-size: 1.6rem;
+      padding-top: 1rem;
+      @include c.mq() {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  ul {
+    flex-wrap: wrap;
+    gap: 2.7rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    li {
+      padding: 2rem 4rem;
+      background-color: #fff;
+      border-radius: 100vmax;
+      font-family: v.$zen-kaku;
+      font-size: 1.6rem;
+      font-weight: 500;
+      @include c.mq() {
+        width: 100%;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/*************************************************
+　商品一覧
+*************************************************/
+.p-archive-product_wrap01 {
+  padding-bottom: 3rem;
+  .child-cate {
+    margin-bottom: 9rem;
+    @include c.mq() {
+      margin-bottom: 5rem;
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: v.$sub-color01;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #000;
+      margin-bottom: 2rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+      }
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      @include c.mq() {
+        gap: 1.5rem;
+      }
+      li {
+        width: calc((100% / 6) - (12rem / 6));
+        @include c.mq() {
+          width: calc((100% / 2) - (1.5rem / 2));
+        }
+        .img-box {
+          aspect-ratio: 1/.79;
+          margin-bottom: .8rem;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+　商品詳細
+*************************************************/
+.p-single-product_wrap01 {
+  padding-top: 15rem;
+  @include c.mq() {
+    padding-top: 10rem;
+  }
+  .item-content {
+    display: flex;
+    gap: 5.4rem;
+    margin-bottom: 20rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 4rem;
+      margin-bottom: 6rem;
+    }
+  }
+  .img-content {
+    width: 60rem;
+    flex-shrink: 0;
+    @include c.mq(ps) {
+      max-width: 35rem;
+    }
+    @include c.mq(md) {
+      width: 30rem;
+    }
+    @include c.mq(){
+      width: 100%;
+      flex-basis: 100%;
+      margin-right: initial;
+    }
+  }
+  .img-wrapper {
+    .swiper-item {
+      overflow: hidden;
+    }
+    .swiper-slide .img-wrap {
+      aspect-ratio: 1/.97;
+      background-color: #fff;
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+  .thumb-list {
+    display: flex;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    @include c.mq() {
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .thumb-item {
+      width: calc((100% / 5) - (6.4rem / 5));
+      aspect-ratio: 1/.97;
+      background-color: #fff;
+      @include c.mq() {
+        width: calc((100% / 4) - (3rem / 4));
+      }
+    }
+    .thumb-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+  // 右側のコンテンツ
+  .detail-content {
+    width: 100%;
+    @include c.mq(){
+      width: 100%;
+      flex-basis: 100%;
+    }
+    .cate {
+      font-size: 1.6rem;
+      margin-bottom: 1.4rem;
+      color: v.$sub-color01
+    }
+    .name {
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 3px;
+      margin-bottom: 2.9rem;
+      color: #220000;
+      @include c.mq() {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .price {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #220000;
+      margin-bottom: 4rem;
+      @include c.mq() {
+        margin-bottom: 2rem;
+      }
+      span {
+        font-size: 1.6rem;
+        margin-left: 1.1rem;
+      }
+    }
+    .item-count {
+      padding-top: 3.7rem;
+      border-top: 1px solid v.$main-txt;
+      margin-bottom: 4.8rem;
+      form {
+        display: block;
+      }
+      .product-quantity {
+        width: 17.5rem;
+        height: 6rem;
+        display: flex;
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        button {
+          width: 6rem;
+          aspect-ratio: 1/.28;
+          font-weight: 500;
+          background-color: #fff;
+        }
+        input {
+          width: initial;
+          padding: initial;
+          border-radius: initial;
+          width: 6.5rem;
+          font-size: 2rem;
+          font-weight: 500;
+          color: #000;
+          background-color: #fff;
+        }
+      }
+      .cart-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding-right: 2rem;
+        width: 25rem;
+        height: 7rem;
+        background-color: v.$sub-color01;
+        border-radius: 100vmax;
+        border: 1px solid v.$sub-color01;
+        font-family: v.$zen-kaku;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        transition: all .3s;
+        @include c.mq() {
+          width: 100%;
+        }
+        &:hover {
+          color: v.$sub-color01;
+          background-color: #fff;
+          path {
+            fill: v.$sub-color01;
+          }
+        }
+        path {
+          transition: all .3s;
+        }
+      }
+    }
+    // input numberの非表示
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    .txt {
+      line-height: 2;
+      @include c.mq() {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+/*************************************************
+　よくあるご質問
+*************************************************/
+.p-faq_wrap01 {
+  margin-top: -15rem;
+  @include c.mq() {
+    margin-top: 0;
+    margin-bottom: 10rem;
+  }
+  .block {
+    margin-bottom: 10rem;
+    overflow: hidden;
+    background-color: rgba($color: #fff, $alpha: .85);
+    padding: 8rem 10rem;
+    border-radius: 1rem;
+    @include c.mq() {
+      margin-bottom: 4rem;
+      padding: 4rem v.pxtovw_sp(20);
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: v.$sub-color02;
+      text-align: center;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid v.$sub-color02;
+      @include c.mq() {
+        font-size: 1.6rem;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .qa-list {
+    .qa {
+      position: relative;
+      padding: 3rem 0;
+      border-bottom: 1px solid v.$sub-color02;
+      @include c.mq() {
+        padding: 2rem 0;
+      }
+      &::before {
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+        content: "";
+        width: 1.5rem;
+        aspect-ratio: 1/.53;
+        background: url(images/icon-arrow02.svg) no-repeat center/contain;
+        rotate: 180deg;
+        transition: all .3s;
+        @include c.mq() {
+          top: 3rem;
+          right: 0;
+        }
+      }
+      dt {
+        font-size: 1.7rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+        color: v.$sub-color02;
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        padding-left: 2rem;
+        @include c.mq() {
+          max-width: 27rem;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          letter-spacing: 2px;
+          align-items: flex-start;
+          gap: 1rem;
+          padding-left: 0;
+        }
+        img {
+          width: 1.8rem;
+          @include c.mq() {
+            width: 1.4rem;
+          }
+        }
+      }
+      dd {
+        margin-top: 3rem;
+        border-radius: 5px;
+        @include c.mq() {
+          padding: 0 1.5rem;
+          margin-top: 2rem;
+        }
+        p {
+          max-width: 100rem;
+          font-size: 1.5rem;
+          line-height: 1.7;
+          letter-spacing: 2px;
+          color: v.$sub-color02;
+          padding-left: 7rem;
+          margin-bottom: 3rem;
+          @include c.mq() {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            padding: 0;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          a {
+            color: v.$sub-color02;
+          }
+          span {
+            color: #f00;
+          }
+        }
+      }
+    }
+    .open {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+/*************************************************
+　お問い合わせ
+*************************************************/
+.p-contact_wrap01 {
+  margin-top: -15rem;
+  margin-bottom: 10rem;
+  @include c.mq() {
+    margin-top: 0;
+  }
+  .contact-tel {
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 8rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    @include c.mq() {
+      padding: 2rem 0;
+      margin-bottom: 4rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      @include c.mq() {
+        font-size: 1.6rem;
+        margin-bottom: .8rem;
+      }
+    }
+    a {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: v.$sub-color01;
+      @include c.mq() {
+        font-size: 2.5rem;
+        gap: .7rem;
+      }
+      img {
+        @include c.mq() {
+          width: 2.5rem;
+        }
+      }
+    }
+    .business-hours {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      @include c.mq() {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .form_wrap {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2.7rem 20rem 5.7rem;
+    margin-bottom: 10rem;
+    @include c.mq() {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 2.8rem;
+      @include c.mq() {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+    }
+    form {
+      table {
+        width: 100%;
+        table-layout: fixed;
+        tr {
+          &:last-of-type {
+            th {
+              vertical-align: baseline;
+              padding-top: 1rem;
+            }
+            td {
+              padding-bottom: 4rem;
+              @include c.mq() {
+                padding-bottom: 2rem;
+              }
+            }
+          }
+          th {
+            width: 25%;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            vertical-align: middle;
+            padding-bottom: 17px;
+            color: v.$sub-color02;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 10px;
+              font-size: 1.4rem;
+            }
+          }
+          td {
+            width: 84%;
+            padding-bottom: 17px;
+            font-size: 1.6rem;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 20px;
+              font-size: 1.4rem;
+            }
+            input,textarea {
+              width: 100%;
+              background-color: #fff;
+              padding: 15px 25px;
+              font-size: 1.4rem;
+              letter-spacing: 1px;
+              border-radius: 5px;
+              border: 1px solid rgba($color: #1a1a1a, $alpha: .4);
+              @include c.mq() {
+                padding: 1rem;
+              }
+            }
+            textarea {
+              @include c.mq() {
+                height: 15rem;
+              }
+            }
+          }
+        }
+      }
+      p {
+        text-align: center;
+        font-weight: 500;
+        color:  v.$sub-color02;
+        margin-bottom: 5rem;
+        @include c.mq() {
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+        a {
+          color: v.$sub-color01;
+          text-decoration: underline;
+        }
+      }
+      .btn-wrap {
+        display: flex;
+        justify-content: center;
+        .btn01 {
+          font-size: 2rem;
+          @include c.mq() {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+　会社概要　特商法
+*************************************************/
+.p-company_wrap01,.p-term_wrap01 {
+  margin-top: -10rem;
+  margin-bottom: 14.3rem;
+  @include c.mq() {
+    margin-top: 0;
+    margin-bottom: 8rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2rem 0;
+    padding: 6rem 8rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    @include c.mq() {
+      border-spacing: 0;
+      padding: 2rem;
+      padding-bottom: 4rem;
+    }
+    tr {
+      th,td {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        line-height: 2;
+        @include c.mq() {
+          line-height: 1.7;
+        }
+      }
+      th {
+        width: 18%;
+        font-size: 1.7rem;
+        font-weight: 600;
+        line-height: 1.5;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid v.$sub-color01;
+        @include c.mq() {
+          display: block;
+          width: 100%;
+          padding-bottom: 0;
+          border-bottom: none;
+          font-size: 1.4rem;
+        }
+      }
+      td {
+        font-weight: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        padding: 2.5rem;
+        border-bottom: 1px solid #000;
+        @include c.mq() {
+          display: block;
+          width: 100%;
+          font-size: 1.3rem;
+          padding-top: 1rem;
+          padding-left: 0;
+        }
+        span {
+          color: #f00;
+        }
+      }
+    }
+  }
+}
+
+.p-company_wrap02 {
+  margin-bottom: 20rem;
+  @include c.mq() {
+    margin-bottom: 10rem;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    @include c.mq() {
+      margin-bottom:  3rem;
+    }
+  }
+  .flex {
+    justify-content: space-between;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  .left,.right {
+    flex-basis: 48.5%;
+  }
+  .right {
+    @include c.mq() {
+      aspect-ratio: 1/.6;
+    }
+  }
+}
+
+.p-term_wrap01 {
+  margin-bottom: 20rem;
+  @include c.mq() {
+    margin-bottom: 10rem;
+  }
+}
+
+/*************************************************
+　プライバシーポリシー
+*************************************************/
+.p-policy_wrap01 {
+  margin-top: -10rem;
+  margin-bottom: 20rem;
+  @include c.mq() {
+    margin: 0 auto 10rem;
+  }
+  .inner {
+    padding: 7rem 8rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    @include c.mq() {
+      padding: 4rem 2rem;
+    }
+  }
+  .block {
+    margin-bottom: 5rem;
+    @include c.mq() {
+      margin-bottom: 3rem;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #000;
+      margin-bottom: 2.2rem;
+      @include c.mq() {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    p,a {
+      font-size: 1.5rem;
+      @include c.mq() {
+        font-size: 1.2rem;
+      }
+    }
+    a {
+      text-decoration: underline;
+      @include c.mq() {
+        word-wrap:break-word;
+      }
+    }
+  }
+}
+
+/*************************************************
+　新着情報一覧
+*************************************************/
+.p-archive-news_wrap01 {
+  margin: -11rem 0 20rem;
+  @include c.mq() {
+    margin: 0 0 10rem;
+  }
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .archive-news_cate {
+      padding-top: 3.5rem;
+      width: 20%;
+      @include c.mq() {
+        width: 100%;
+      }
+      ul {
+        position: sticky;
+        top: 0;
+        @include c.mq() {
+          position: static;
+          display: flex;
+          gap: 1rem;
+        }
+      }
+      li {
+        margin-bottom: 1rem;
+        a {
+          position: relative;
+          padding-left: 2rem;
+          &:before {
+            transition: all .3s;
+          }
+          &:hover {
+            &::before {
+              content: "";
+              width: 7px;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              background-color: #0a0a0a;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+              transition: all .3s;
+            }
+          }
+          &.active {
+            &::before {
+              content: "";
+              width: 7px;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              background-color: #0a0a0a;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+              transition: all .3s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .archive-news_wrap {
+    width: 75%;
+    max-width: 100rem;
+    @include c.mq() {
+      width: 100%;
+    }
+  }
+  .archive-contents {
+    margin-bottom: 10rem;
+    @include c.mq() {
+      margin-bottom: 6rem;
+    }
+    dl {
+      &:last-of-type {
+        dt,dd {
+          border-bottom: none;
+        }
+      }
+      a {
+        position: relative;
+        display: flex;
+        @include c.mq() {
+          display: block;
+        }
+        &::before {
+          content: "";
+          width: 1.5rem;
+          aspect-ratio: 1 / 1.71;
+          background: url(images/icon-arrow_bl.svg) no-repeat center / contain;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          transition: all .3s;
+          @include c.mq() {
+            width: 2rem;
+          }
+        }
+        &:hover {
+          &::before {
+            background: url(images/icon-arrow_or.svg) no-repeat center / contain;
+          }
+          dt,dd {
+            color: v.$sub-color01;
+          }
+          dt {
+            .cate {
+              color: #F29847;
+            }
+          }
+        }
+      }
+      dt,dd {
+        font-family: v.$zen-kaku;
+        font-size: 1.5rem;
+        padding: 3.5rem 0;
+        border-bottom: 1px solid #000;
+        transition: all .3s;
+        @include c.mq() {
+          border-bottom: none;
+          padding: 2rem;
+        }
+      }
+      dt {
+        flex-basis: 30%;
+        @include c.mq() {
+          padding-bottom: 1rem;
+        }
+        .time {
+          margin-right: 4.5rem;
+          @include c.mq() {
+            margin-right: 2rem;
+          }
+        }
+        .cate {
+          color: #737373;
+          transition: all .3s;
+        }
+      }
+      dd {
+        flex-basis: 70%;
+        font-weight: 500;
+        letter-spacing: 3px;
+        @include c.mq() {
+          padding-top: 0;
+          border-bottom: 1px solid #000 !important;
+          letter-spacing: 1px;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          border-bottom: 1px solid #000 !important;
+        }
+      }
+    }
+  }
+}
+
+// ページネーション
+.pagination {
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  a,span {
+    font-size: 1.6rem;
+    width: 3rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .3s;
+  }
+  a {
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  .current {
+    background-color: #fff;
+  }
+}
+
+/*************************************************
+　新着情報詳細
+*************************************************/
+.p-single-news_wrap01 {
+  margin: 18.6rem 0 20rem;
+  @include c.mq() {
+    margin: 12rem 0 10rem;
+  }
+  .inner {
+    max-width: 100rem;
+  }
+  .single-head {
+    padding-bottom: 4.5rem;
+    border-bottom: 1px solid v.$main-txt;
+    margin-bottom: 6rem;
+    @include c.mq() {
+      padding-bottom: 2rem;
+      margin-bottom: 5rem;
+    }
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 3.5rem;
+      @include c.mq() {
+        font-size: 2.4rem;
+      }
+    }
+    div {
+      display: flex;
+      gap: 4.5rem;
+      span {
+        font-family: v.$zen-kaku;
+        font-size: 1.5rem;
+        font-weight: 500;
+        @include c.mq() {
+          font-size: 1.3rem;
+        }
+        &.cate {
+          color: #737373;
+        }
+      }
+    }
+  }
+  .news-contents {
+    margin-bottom: 8rem;
+    @include c.mq() {
+      margin-bottom: 6rem;
+    }
+    h2,h3,h4,p,figure,ol,ul {
+      margin-bottom: 4rem;
+      @include c.mq() {
+        margin-bottom: 2.5rem;
+      }
+    }
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      background-color: v.$sub-color01;
+      @include c.mq() {
+        font-size: 2rem;
+      }
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid v.$sub-color01;
+      @include c.mq() {
+        font-size: 1.6rem;
+      }
+    }
+    h4 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: v.$sub-color01;
+      @include c.mq() {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      a {
+        color: v.$sub-color01;
+        text-decoration: underline;
+      }
+    }
+    figure {
+      max-width: 80rem;
+      margin: 0 auto 4rem;
+      @include c.mq() {
+        margin: 0 auto 2.5rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    ol,ul {
+      border: 1px solid v.$sub-color01;
+      border-radius: 5px;
+      padding: 3rem 4rem 2rem;
+      background-color: rgba($color: #fff, $alpha: .4);
+      li {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        @include c.mq() {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    ol {
+      li {
+        list-style: decimal;
+      }
+    }
+    ul {
+      li {
+        list-style: disc;
+      }
+    }
+  }
+  .btn-wrap {
+    text-align: center;
+  }
+}
