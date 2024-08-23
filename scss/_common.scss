@@ -1,4 +1,13 @@
 @use "variable"as v;
+
+/*
+Theme Name: なかや食材
+Description: テーマの説明
+Theme URI: テーマのURL
+Author: テーマの作者
+Author URI: 作者のサイト
+Version: バージョン
+*/
 /*************************************************
 common-style
 *************************************************/
@@ -229,18 +238,13 @@ outline-offset: -2px;
   }
 }
 
-
-// .bg-filter01 {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   z-index: -10;
-// }
-
-// .layer {
-//   position: relative;
-//   z-index: 10;
-// }
-
+.event-none {
+  .cate-list {
+    a {
+      pointer-events: none !important;
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}

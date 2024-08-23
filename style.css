@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+Theme Name: なかや食材
+Description: テーマの説明
+Theme URI: テーマのURL
+Author: テーマの作者
+Author URI: 作者のサイト
+Version: バージョン
+*/
 /*************************************************
 common-style
 *************************************************/
@@ -199,6 +207,13 @@ input[type=button]:focus {
 }
 .item-card .price span {
   font-size: 1.4rem;
+}
+
+.event-none .cate-list a {
+  pointer-events: none !important;
+}
+.event-none .cate-list a::before {
+  display: none !important;
 }
 
 /*************************************************
@@ -1158,7 +1173,7 @@ top
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 4rem;
+  right: 2rem;
   transition: all 0.3s;
 }
 @media screen and (max-width: 1280px) {
@@ -1762,7 +1777,12 @@ top
   }
 }
 .p-under_mv.p_archive-product p {
-  top: 46.9230769231vw;
+  top: 18.75vw;
+}
+@media screen and (max-width: 768px) {
+  .p-under_mv.p_archive-product p {
+    top: 46.9230769231vw;
+  }
 }
 .p-under_mv.p_term h1 {
   font-size: 2.4rem;
@@ -2564,6 +2584,11 @@ top
   vertical-align: middle;
   padding-bottom: 17px;
   color: #1a1a1a;
+  text-align: start;
+}
+.p-contact_wrap01 .form_wrap form table tr th p {
+  text-align: start;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 768px) {
   .p-contact_wrap01 .form_wrap form table tr th {
@@ -2586,6 +2611,9 @@ top
     font-size: 1.4rem;
   }
 }
+.p-contact_wrap01 .form_wrap form table tr td p {
+  margin-bottom: 0;
+}
 .p-contact_wrap01 .form_wrap form table tr td input, .p-contact_wrap01 .form_wrap form table tr td textarea {
   width: 100%;
   background-color: #fff;
@@ -2594,6 +2622,7 @@ top
   letter-spacing: 1px;
   border-radius: 5px;
   border: 1px solid rgba(26, 26, 26, 0.4);
+  text-align: start;
 }
 @media screen and (max-width: 768px) {
   .p-contact_wrap01 .form_wrap form table tr td input, .p-contact_wrap01 .form_wrap form table tr td textarea {
@@ -2625,13 +2654,30 @@ top
   display: flex;
   justify-content: center;
 }
+.p-contact_wrap01 .form_wrap form .btn-wrap p {
+  margin-bottom: 0;
+  margin-top: -0.5px;
+}
 .p-contact_wrap01 .form_wrap form .btn-wrap .btn01 {
   font-size: 2rem;
+  border: 1px solid #EE7300 !important;
+  border-radius: 100vmax !important;
+  padding: 1.6666666667vw max(4.1666666667vw, 7rem) 1.6666666667vw 2.7777777778vw;
 }
 @media screen and (max-width: 768px) {
   .p-contact_wrap01 .form_wrap form .btn-wrap .btn01 {
     font-size: 1.6rem;
+    padding: 2.3rem 6.5rem 2.3rem 4rem;
   }
+}
+.p-contact_wrap01 .form_wrap form .btn-wrap .btn01:hover input {
+  color: #EE7300 !important;
+}
+.p-contact_wrap01 .form_wrap form .btn-wrap .btn01 input {
+  color: #fff !important;
+}
+.p-contact_wrap01 .form_wrap form .btn-wrap .wpcf7-spinner {
+  display: none;
 }
 
 /*************************************************
@@ -3164,6 +3210,337 @@ top
 }
 .p-single-news_wrap01 .btn-wrap {
   text-align: center;
+}
+
+/*************************************************
+　マイページ
+*************************************************/
+.woocommerce h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.woocommerce .woocommerce-message {
+  font-size: 1.4rem;
+}
+.woocommerce form {
+  background-color: #fff;
+  border: none !important;
+  padding: 4rem 10rem !important;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce form {
+    padding: 2rem !important;
+  }
+}
+.woocommerce form p {
+  margin-bottom: 2rem;
+}
+.woocommerce form .woocommerce-form-row {
+  margin-bottom: 1.5rem !important;
+}
+.woocommerce form .woocommerce-form-row label {
+  margin-bottom: 1rem;
+}
+.woocommerce form .woocommerce-form-row input {
+  padding: 1rem;
+  background-color: #ededed;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce form .woocommerce-form-login__rememberme {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .woocommerce form .woocommerce-form-login__submit {
+    width: 100%;
+    aspect-ratio: 1/0.15;
+    text-align: center;
+  }
+}
+.woocommerce .col2-set .col-1 {
+  margin-bottom: 2rem;
+}
+
+.woocommerce-MyAccount-navigation {
+  margin-bottom: 6rem;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-MyAccount-navigation {
+    margin-bottom: 4rem;
+  }
+}
+.woocommerce-MyAccount-navigation ul {
+  display: flex;
+  gap: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-MyAccount-navigation ul {
+    flex-wrap: wrap;
+  }
+}
+.woocommerce-MyAccount-navigation ul li {
+  width: calc(16.6666666667% - 1.5rem);
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-MyAccount-navigation ul li {
+    width: auto;
+  }
+}
+.woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: #EE7300;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-MyAccount-navigation ul li a {
+    padding: 0.5rem 1.5rem;
+  }
+}
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link--downloads {
+  display: none;
+}
+
+.woocommerce-MyAccount-content p {
+  margin-bottom: 2rem;
+}
+.woocommerce-MyAccount-content p a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+.woocommerce-MyAccount-content .woocommerce-info {
+  font-size: 1.4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.woocommerce-MyAccount-content .woocommerce-info::before {
+  top: 2.2em;
+}
+
+.woocommerce-orders-table th, .woocommerce-orders-table td, .woocommerce-orders-table time {
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-orders-table td {
+    padding: 1rem !important;
+  }
+}
+
+.woocommerce-Addresses .woocommerce-Address-title {
+  margin-bottom: 1rem;
+}
+.woocommerce-Addresses .woocommerce-Address-title a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+.woocommerce-Addresses address {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .woocommerce-Addresses address {
+    margin-bottom: 2rem;
+  }
+}
+
+.woocommerce-address-fields .form-row {
+  margin-bottom: 1.5rem !important;
+}
+.woocommerce-address-fields .form-row label {
+  margin-bottom: 1rem;
+}
+.woocommerce-address-fields .form-row input {
+  padding: 1rem;
+  background-color: #ededed;
+}
+.woocommerce-address-fields .form-row .select2-selection--single {
+  height: auto;
+  border: none;
+}
+.woocommerce-address-fields .form-row .select2-selection--single .select2-selection__rendered {
+  padding: 1rem;
+  background-color: #ededed;
+}
+.woocommerce-address-fields .form-row .select2-selection--single .select2-selection__arrow {
+  height: 4.2rem;
+}
+
+/*************************************************
+　カート・チェックアウト
+*************************************************/
+.wp-block-woocommerce-filled-cart-block {
+  flex-direction: column;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__main {
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__main table th, .wp-block-woocommerce-filled-cart-block .wc-block-cart__main table td, .wp-block-woocommerce-filled-cart-block .wc-block-cart__main table span {
+  font-size: 14px;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__main table .wc-block-cart-item__image {
+  width: 15rem;
+}
+@media screen and (max-width: 768px) {
+  .wp-block-woocommerce-filled-cart-block .wc-block-cart__main table .wc-block-cart-item__image {
+    width: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wp-block-woocommerce-filled-cart-block .wc-block-cart__main table .wc-block-cart-item__wrap {
+    width: 80%;
+  }
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__main table .wc-block-components-product-metadata {
+  display: none;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar {
+  width: 40% !important;
+  margin: 0 0 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar {
+    width: 100% !important;
+  }
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wc-block-cart__totals-title {
+  font-size: 1.8rem !important;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wp-block-woocommerce-cart-order-summary-totals-block div, .wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wp-block-woocommerce-cart-order-summary-totals-block span {
+  font-size: 1.4rem;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wp-block-woocommerce-cart-order-summary-totals-block a {
+  color: #1a1a1a;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wc-block-components-totals-wrapper .wc-block-components-totals-footer-item {
+  font-size: 14px;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wc-block-cart__submit-container {
+  aspect-ratio: 1/0.15;
+}
+.wp-block-woocommerce-filled-cart-block .wc-block-cart__sidebar .wc-block-cart__submit-container a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(245, 137, 10);
+  background: linear-gradient(180deg, rgb(245, 137, 10) 0%, rgb(216, 82, 25) 100%);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.wc-block-checkout .wc-block-checkout__form {
+  background-color: #fff;
+  padding: 3rem 2rem !important;
+  border: 1px solid hsla(0, 0%, 7%, 0.11);
+  border-radius: 5px;
+}
+.wc-block-checkout .wc-block-checkout__form h2 {
+  font-size: 1.6rem;
+}
+.wc-block-checkout .wc-block-checkout__form p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.wc-block-checkout .wc-block-checkout__form input, .wc-block-checkout .wc-block-checkout__form span {
+  font-size: 1.4rem !important;
+}
+.wc-block-checkout .wc-block-checkout__form .wc-block-checkout__contact-fields {
+  margin-bottom: 3rem !important;
+}
+.wc-block-checkout .wc-block-checkout__form .wc-block-checkout__contact-fields label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.wc-block-checkout .wc-block-checkout__form .wc-block-checkout__contact-fields .wc-block-components-text-input input {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.wc-block-checkout .wc-block-checkout__form .wc-block-components-checkout-step__container label, .wc-block-checkout .wc-block-checkout__form .wc-block-components-country-input label {
+  font-size: 1.3rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.wc-block-checkout .wc-block-checkout__form .wc-block-components-checkout-step__container .wc-block-components-text-input input, .wc-block-checkout .wc-block-checkout__form .wc-block-components-checkout-step__container .wc-block-components-text-input select, .wc-block-checkout .wc-block-checkout__form .wc-block-components-country-input .wc-block-components-text-input input, .wc-block-checkout .wc-block-checkout__form .wc-block-components-country-input .wc-block-components-text-input select {
+  font-size: 1.5rem !important;
+  padding: 1rem;
+}
+.wc-block-checkout .wc-block-components-radio-control-accordion-content div {
+  font-size: 14px;
+}
+.wc-block-checkout .wc-block-checkout__actions_row button {
+  display: flex;
+  align-items: center;
+  width: 30rem;
+  aspect-ratio: 1/0.15;
+  background: rgb(245, 137, 10);
+  background: linear-gradient(180deg, rgb(245, 137, 10) 0%, rgb(216, 82, 25) 100%);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.wc-block-checkout .wc-block-checkout__sidebar {
+  margin-top: 0;
+}
+.wc-block-checkout .wp-block-woocommerce-checkout-totals-block {
+  padding-bottom: 15px;
+  padding-left: 0;
+  background-color: #fff;
+  border: none !important;
+}
+
+.woocommerce-thankyou-order-received {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.woocommerce-thankyou-order-details li {
+  font-size: 1.4rem !important;
+}
+.woocommerce-thankyou-order-details li strong {
+  display: inline-block !important;
+  font-size: 1em !important;
+}
+
+.woocommerce-order-details {
+  margin-bottom: 4rem !important;
+}
+.woocommerce-order-details .woocommerce-order-details__title {
+  text-align: left;
+}
+.woocommerce-order-details table {
+  background-color: #fff;
+}
+.woocommerce-order-details table th, .woocommerce-order-details table td {
+  font-size: 1.4rem;
+}
+
+.woocommerce-customer-details address {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  background-color: #fff;
+  padding: 2rem !important;
+}
+.woocommerce-customer-details address p {
+  margin-bottom: 0;
+}
+
+.p-woocommerce {
+  margin-top: -10rem;
+  margin-bottom: 15rem;
+}
+@media screen and (max-width: 768px) {
+  .p-woocommerce {
+    margin-top: 0;
+    margin-bottom: 8rem;
+  }
 }
 
 /**

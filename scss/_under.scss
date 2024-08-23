@@ -73,7 +73,10 @@
       }
     }
     p {
-      top: v.pxtovw_sp(183);
+      top: v.pxtovw(270);
+      @include c.mq() {
+        top: v.pxtovw_sp(183);
+      }
     }
   }
   &.p_term {
@@ -785,6 +788,11 @@
             vertical-align: middle;
             padding-bottom: 17px;
             color: v.$sub-color02;
+            text-align: start;
+            p {
+              text-align: start;
+              margin-bottom: 0;
+            }
             @include c.mq() {
               display: block;
               width: 100%;
@@ -802,6 +810,9 @@
               padding-bottom: 20px;
               font-size: 1.4rem;
             }
+            p {
+              margin-bottom: 0;
+            }
             input,textarea {
               width: 100%;
               background-color: #fff;
@@ -810,6 +821,7 @@
               letter-spacing: 1px;
               border-radius: 5px;
               border: 1px solid rgba($color: #1a1a1a, $alpha: .4);
+              text-align: start;
               @include c.mq() {
                 padding: 1rem;
               }
@@ -839,11 +851,30 @@
       .btn-wrap {
         display: flex;
         justify-content: center;
+        p {
+          margin-bottom: 0;
+          margin-top: -.5px;
+        }
         .btn01 {
           font-size: 2rem;
+          border: 1px solid #EE7300 !important;
+          border-radius: 100vmax !important;
+          padding: v.pxtovw(24) max(v.pxtovw(60),7rem) v.pxtovw(24) v.pxtovw(40);
           @include c.mq() {
             font-size: 1.6rem;
+            padding: 2.3rem 6.5rem 2.3rem 4rem;
           }
+          &:hover {
+            input {
+              color: #EE7300 !important;
+            }
+          }
+          input {
+            color: #fff !important;
+          }
+        }
+        .wpcf7-spinner {
+          display: none;
         }
       }
     }
@@ -1328,5 +1359,359 @@
   }
   .btn-wrap {
     text-align: center;
+  }
+}
+
+
+/*************************************************
+　マイページ
+*************************************************/
+//ログイン,パスワードを忘れた
+.woocommerce {
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .woocommerce-message {
+    font-size: 1.4rem;
+  }
+  form {
+    background-color: #fff;
+    border: none !important;
+    padding: 4rem 10rem !important;
+    @include c.mq() {
+      padding: 2rem !important;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    .woocommerce-form-row {
+      margin-bottom: 1.5rem !important;
+      label {
+        margin-bottom: 1rem;
+      }
+      input {
+        padding: 1rem;
+        background-color: #ededed;
+      }
+    }
+    .woocommerce-form-login__rememberme {
+      @include c.mq() {
+        display: flex !important;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .woocommerce-form-login__submit {
+      @include c.mq() {
+        width: 100%;
+        aspect-ratio: 1/.15;
+        text-align: center;
+      }
+    }
+  }
+  .col2-set {
+    .col-1 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+//woocommerce - マイアカウント
+.woocommerce-MyAccount-navigation {
+  margin-bottom: 6rem;
+  @include c.mq() {
+    margin-bottom: 4rem;
+  }
+  ul {
+    display: flex;
+    gap: 1.5rem;
+    @include c.mq() {
+      flex-wrap: wrap;
+    }
+    li {
+      width: calc((100% / 6) - (7.5rem / 5));
+      @include c.mq() {
+        width: auto;
+      }
+      a {
+        display: block;
+        width: 100%;
+        padding: .5rem 0;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        background-color: v.$sub-color01;
+        color: #fff;
+        @include c.mq() {
+          padding: .5rem 1.5rem;
+        }
+      }
+    }
+  }
+  .woocommerce-MyAccount-navigation-link--downloads {
+    display: none;
+  }
+}
+.woocommerce-MyAccount-content {
+  p {
+    margin-bottom: 2rem;
+    a {
+      color: v.$sub-color02;
+      text-decoration: underline;
+    }
+  }
+  .woocommerce-info {
+    font-size: 1.4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &::before {
+      top: 2.2em;
+    }
+  }
+}
+.woocommerce-orders-table {
+  th,td,time {
+    font-size: 1.4rem;
+  }
+  td {
+    @include c.mq() {
+      padding: 1rem !important;
+    }
+  }
+}
+.woocommerce-Addresses {
+  .woocommerce-Address-title {
+    margin-bottom: 1rem;
+    a {
+      color: v.$sub-color02;
+      text-decoration: underline;
+    }
+  }
+  address {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    @include c.mq() {
+      margin-bottom: 2rem;
+    }
+  }
+}
+.woocommerce-address-fields {
+  .form-row {
+    margin-bottom: 1.5rem !important;
+    label {
+      margin-bottom: 1rem;
+    }
+    input {
+      padding: 1rem;
+      background-color: #ededed;
+    }
+    .select2-selection--single  {
+      height: auto;
+      border: none;
+      .select2-selection__rendered {
+        padding: 1rem;
+        background-color: #ededed;
+      }
+      .select2-selection__arrow {
+        height: 4.2rem;
+      }
+    }
+  }
+}
+
+/*************************************************
+　カート・チェックアウト
+*************************************************/
+//カート
+.wp-block-woocommerce-filled-cart-block {
+  flex-direction: column;
+  .wc-block-cart__main {
+    width: 100% !important;
+    padding-right: 0 !important;
+    table {
+      // tr {
+      //   @include c.mq() {
+      //     display: block !important;
+      //   }
+      //   &.wc-block-cart-items__header {
+      //     @include c.mq() {
+      //       display: none;
+      //     }
+      //   }
+      // }
+      th,td,span {
+        font-size: 14px;
+      }
+      .wc-block-cart-item__image {
+        width: 15rem;
+        @include c.mq() {
+          width: auto;
+        }
+      }
+      .wc-block-cart-item__wrap {
+        @include c.mq() {
+          width: 80%;
+        }
+      }
+      .wc-block-components-product-metadata {
+        display: none;
+      }
+    }
+  }
+  .wc-block-cart__sidebar {
+    width: 40% !important;
+    margin: 0 0 0 auto;
+    @include c.mq() {
+      width: 100% !important;
+    }
+    .wc-block-cart__totals-title {
+      font-size: 1.8rem !important;
+    }
+    .wp-block-woocommerce-cart-order-summary-totals-block {
+      div,span {
+        font-size: 1.4rem;
+      } 
+      a {
+        color: v.$sub-color02;
+      }
+    }
+    .wc-block-components-totals-wrapper {
+      .wc-block-components-totals-footer-item {
+        font-size: 14px;
+      }
+    }
+    .wc-block-cart__submit-container {
+      aspect-ratio: 1/.15;
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgb(245,137,10);
+        background: linear-gradient(180deg, rgba(245,137,10,1) 0%, rgba(216,82,25,1) 100%);
+        border-radius: 8px;
+        color: #fff;
+      }
+    }
+  }
+}
+//チェックアウト
+.wc-block-checkout {
+  .wc-block-checkout__form {
+    background-color: #fff;
+    padding: 3rem 2rem !important;
+    border: 1px solid hsla(0, 0%, 7%, .11);
+    border-radius: 5px;
+    h2 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    input,span {
+      font-size: 1.4rem !important;
+    }
+    .wc-block-checkout__contact-fields {
+      margin-bottom: 3rem !important;
+      label {
+        font-size: 1.4rem;
+        margin-bottom: .5rem;
+      }
+      .wc-block-components-text-input {
+        input {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+      }
+    }
+    .wc-block-components-checkout-step__container,.wc-block-components-country-input {
+      label {
+        font-size: 1.3rem !important;
+        margin-bottom: .5rem !important;
+      }
+      .wc-block-components-text-input {
+        input,select {
+          font-size: 1.5rem !important;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  .wc-block-components-radio-control-accordion-content {
+    div {
+      font-size: 14px;
+    }
+  }
+  .wc-block-checkout__actions_row {
+    button {
+      display: flex;
+      align-items: center;
+      width: 30rem;
+      aspect-ratio: 1/.15;
+      background: rgb(245,137,10);
+      background: linear-gradient(180deg, rgba(245,137,10,1) 0%, rgba(216,82,25,1) 100%);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+  .wc-block-checkout__sidebar {
+    margin-top: 0;
+  }
+  .wp-block-woocommerce-checkout-totals-block {
+    padding-bottom: 15px;
+    padding-left: 0;
+    background-color: #fff;
+    border: none !important;
+  }
+}
+.woocommerce-thankyou-order-received {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.woocommerce-thankyou-order-details {
+  li {
+    font-size: 1.4rem !important;
+    strong {
+      display: inline-block !important;
+      font-size: 1em !important;
+    }
+  } 
+}
+.woocommerce-order-details {
+  margin-bottom: 4rem !important;
+  .woocommerce-order-details__title {
+    text-align: left;
+  }
+  table {
+    background-color: #fff;
+    th,td {
+      font-size: 1.4rem;
+    }
+  }
+}
+.woocommerce-customer-details {
+  address {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    background-color: #fff;
+    padding: 2rem !important;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.p-woocommerce {
+  margin-top: -10rem;
+  margin-bottom: 15rem;
+  @include c.mq() {
+    margin-top: 0;
+    margin-bottom: 8rem;
   }
 }

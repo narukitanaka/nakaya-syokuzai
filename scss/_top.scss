@@ -297,7 +297,7 @@ top
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: 4rem;
+          right: 2rem;
           transition: all .3s;
           @include c.mq(ps) {
             right: 2.5rem;
